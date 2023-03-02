@@ -1,8 +1,8 @@
-import { Login } from "./Login";
+import { SigIn } from "./pages/SigIn";
 
 function App() {
   return (
-   <Login/>
+   <SigIn/>
     );
 }
 
