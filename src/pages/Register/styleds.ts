@@ -7,7 +7,6 @@ export const Main = styled.main`
     justify-content: center;
     justify-items: center;
     align-items: center;
-
 `;
 
 export const View = styled.div`
@@ -17,10 +16,8 @@ export const View = styled.div`
     background-color: #00a5f1;
     opacity: 0.85;
     border-radius: 25px;
-
     flex-direction: column;
-    /* justify-content: center; */
-    /* justify-items: center; */
+    justify-content: center;
     align-items: center;
 `;
 
@@ -29,10 +26,8 @@ export const Form = styled.form`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 2000px;
+    height: 65vh;
     width: 40vw;
-    
-    
 `;
 
 export const Title = styled.h1`
@@ -40,7 +35,6 @@ export const Title = styled.h1`
     font-weight: 500;
     font-family: "Roboto";
     margin-bottom: 3vh;
-    
 `;
 
 
