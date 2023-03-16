@@ -35,7 +35,7 @@ export const RightFild = styled.div`
     
 `;
 
-export const Form = styled.body`
+export const Form = styled.form`
     display: flex;
     flex-direction: column;
     width: 24vw;

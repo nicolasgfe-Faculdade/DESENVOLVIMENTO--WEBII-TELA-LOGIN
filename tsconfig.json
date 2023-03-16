@@ -22,5 +22,5 @@
   },
   "include": [
     "src"
-  ]
+, "src/components/Input/index.tsx", "src/components/Input/.styles.ts"  ]
 }

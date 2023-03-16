@@ -3,21 +3,75 @@ import logo from '../../assets/logo.svg';
 import appleIcon from '../../assets/apple.png';
 import facebookIcon from '../../assets/facebook.png';
 import googleIcon from '../../assets/google.png';
-import { Button, Container, DivOptions, DivRecovery, Forgot, Form, Icon, Imagem, InputTextField, InscreverSe, Label, LeftFild, OpenOption, Options, RememberMe, RightFild, Title } from './styleds';
+
+
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from "yup";
+
+import { Input } from '../../components/Input';
+
+import { 
+    Button, 
+    Container, 
+    DivOptions, 
+    DivRecovery,
+    Forgot, Form, 
+    Icon, 
+    Imagem, 
+    InputTextField, 
+    InscreverSe, 
+    Label, 
+    LeftFild,
+    OpenOption, 
+    Options, 
+    RememberMe, 
+    RightFild, 
+    Title 
+} from './styleds';
+
+type SignIn = {
+    username: string;
+    password: string;
+}
+
+const schema = yup.object().shape({
+    username: yup.string().required(),
+    password: yup.string().required(),
+  });
 
 export const SigIn = () => {
+    const { register, handleSubmit, formState } = useForm<SignIn>({
+        resolver: yupResolver(schema)
+      });
+
+    const errors = formState.errors;
+
+    const handleSignIn = (data: SignIn) => {
+        console.log(data);
+      }
+
     return (
         <Container>
             <LeftFild>
                 <Imagem src={logo}></Imagem>
             </LeftFild>
             <RightFild>
-                <Form>
+                <Form onSubmit={handleSubmit(handleSignIn)}>
                     <Title>LOGIN</Title>
-                    <Label htmlFor='username'>Username</Label>
-                    <InputTextField id='username' type="text" placeholder="@mail.com" ></InputTextField>
-                    <Label htmlFor='password'>Password</Label>
-                    <InputTextField id='password' type="password" placeholder="Password" ></InputTextField>
+                    <Input
+                        label='Username'
+                        placeholder='@Mail.com'
+                        error={errors.username}
+                        {...register('username')}
+                    />
+                    <Input 
+                        label='Password'
+                        type="password"
+                        placeholder='Password'
+                        error={errors.password}
+                        {...register('password')}
+                    />
                     <DivOptions>
                         <RememberMe>
                             <input id='rememberme' type="checkbox"></input>
@@ -26,10 +80,10 @@ export const SigIn = () => {
                         <Forgot href="https://dontpad.com/06cff003d70bce99cae9fc0896e19c1f/">Esqueceu a Senha?</Forgot>
                     </DivOptions>
 
-                    <Button type="button">Entrar</Button>
+                    <Button type="submit">Entrar</Button>
                     <DivRecovery>
                         <Label> Não Tem Uma Conta?</Label>
-                        <InscreverSe href="https://dontpad.com/3df358106dcfd76b0f0ebc24310ea0ae">Inscrever-se</InscreverSe>
+                        <InscreverSe href="http://localhost:3000/register">Inscrever-se</InscreverSe>
                     </DivRecovery>
                     <Options>
                         Logar Com
