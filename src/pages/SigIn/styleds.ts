@@ -15,8 +15,8 @@ export const LeftFild = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    
+
+
     background-color: #00a5f1;
     opacity: 0.85;
 `;
@@ -32,7 +32,7 @@ export const RightFild = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
 `;
 
 export const Form = styled.form`
@@ -75,7 +75,7 @@ export const DivOptions = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    
+
 `;
 
 export const RememberMe = styled.div`
@@ -102,7 +102,7 @@ export const Button = styled.button`
     font-size: 20px;
     background-color: #00a5f1;
     border: 0;
-    color: #ffffff;
+    color: ${props => props.theme.white};
     border-radius: 5px;
     &:hover{
         opacity: 0.6;
