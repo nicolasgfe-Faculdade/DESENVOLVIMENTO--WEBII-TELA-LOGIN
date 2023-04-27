@@ -11,23 +11,23 @@ import * as yup from "yup";
 
 import { Input } from '../../components/Input';
 
-import { 
-    Button, 
-    Container, 
-    DivOptions, 
+import {
+    Button,
+    Container,
+    DivOptions,
     DivRecovery,
-    Forgot, Form, 
-    Icon, 
-    Imagem, 
-    InputTextField, 
-    InscreverSe, 
-    Label, 
+    Forgot, Form,
+    Icon,
+    Imagem,
+    InputTextField,
+    InscreverSe,
+    Label,
     LeftFild,
-    OpenOption, 
-    Options, 
-    RememberMe, 
-    RightFild, 
-    Title 
+    OpenOption,
+    Options,
+    RememberMe,
+    RightFild,
+    Title
 } from './styleds';
 
 type SignIn = {
@@ -65,7 +65,7 @@ export const SigIn = () => {
                         error={errors.username}
                         {...register('username')}
                     />
-                    <Input 
+                    <Input
                         label='Password'
                         type="password"
                         placeholder='Password'
@@ -77,13 +77,13 @@ export const SigIn = () => {
                             <input id='rememberme' type="checkbox"></input>
                             <Label htmlFor='rememberme' >Remember me</Label>
                         </RememberMe>
-                        <Forgot href="https://dontpad.com/06cff003d70bce99cae9fc0896e19c1f/">Esqueceu a Senha?</Forgot>
+                        <Forgot to="https://dontpad.com/06cff003d70bce99cae9fc0896e19c1f/">Esqueceu a Senha?</Forgot>
                     </DivOptions>
 
                     <Button type="submit">Entrar</Button>
                     <DivRecovery>
                         <Label> Não Tem Uma Conta?</Label>
-                        <InscreverSe href="http://localhost:3000/register">Inscrever-se</InscreverSe>
+                        <InscreverSe to="http://localhost:3000/register">Inscrever-se</InscreverSe>
                     </DivRecovery>
                     <Options>
                         Logar Com

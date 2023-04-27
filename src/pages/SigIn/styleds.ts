@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const Container = styled.main`
@@ -85,7 +86,7 @@ export const RememberMe = styled.div`
     font-size: 14px;
 `;
 
-export const Forgot = styled.a`
+export const Forgot = styled(NavLink)`
     display: flex;
     font-size: 14px;
     font-weight: 20px;
@@ -117,7 +118,7 @@ export const DivRecovery = styled.div`
     align-items: center;
 `;
 
-export const InscreverSe = styled.a`
+export const InscreverSe = styled(NavLink)`
     display: flex;
     font-size: 16px;
     font-weight: 20px;
